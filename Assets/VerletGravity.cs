@@ -27,7 +27,6 @@ public class VerletGravity : MonoBehaviour
         _previousPosition = _currentPosition - startVelocity3 * Time.fixedDeltaTime;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         AddForce(new Vector3(0.0f, -9.81f, 0.0f) * mass); // Add gravity force
@@ -43,7 +42,6 @@ public class VerletGravity : MonoBehaviour
         _accumulatedForces = Vector3.zero;
 
         velocity = Vector3.Distance(_currentPosition, _previousPosition);
-        
     }
 
 
@@ -66,5 +64,4 @@ public class VerletGravity : MonoBehaviour
     {
         buttonForce = new Vector3(buttonForce.x, float.Parse(inputField.text), 0.0f);
     }
-    
 }

@@ -28,7 +28,10 @@ public class Verletintegration : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 tempPos = currentPos;
-        currentPos = (2 - damping) * currentPos - (1-damping)*previousPos + accumulatedForces * (delta * delta * inverseMass);
+        if (GetComponent<collision>().GetIfFalling())
+        {
+            currentPos = (2 - damping) * currentPos - (1-damping)*previousPos + accumulatedForces * (delta * delta * inverseMass);
+        } // else: glide/bounce along floor
         previousPos = tempPos;
         transform.position = currentPos;
         accumulatedForces = Vector3.zero;
