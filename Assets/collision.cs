@@ -4,18 +4,47 @@ using UnityEngine;
 
 public class collision : MonoBehaviour
 {
-    [SerializeField] GameObject floor = null; //change to something more general
-
     float yDifference;
     bool falling = true;
+    int counter = 0;
+
+    List<floor> floors;
+
+    private void Start()
+    {
+        floors = FindObjectOfType<CollisionListMaker>().floors;
+    }
 
     void FixedUpdate()
     {
-        yDifference = transform.position.y - floor.transform.position.y;
-
-        if (yDifference < floor.transform.localScale.y && falling)
+        if(counter < 2)
         {
-            falling = false;
+            if (floors.Count < FindObjectOfType<CollisionListMaker>().floors.Count)
+            {
+                floors = FindObjectOfType<CollisionListMaker>().floors;
+                Debug.Log("Updated the list");
+            }
+            counter++;
+        }
+
+        if (falling)
+        {
+            foreach (floor x in floors)
+            {
+                yDifference = transform.position.y - x.transform.position.y;
+
+                if (yDifference < x.transform.localScale.y && falling)
+                {
+                    falling = false;
+                }
+                /*else
+                {
+                    if (!falling)
+                    {
+                        falling = true;
+                    }
+                }*/
+            }
         }
     }
 
