@@ -9,9 +9,9 @@ public class VerletIntegration : MonoBehaviour
     private Vector3 _currentPosition;
 
     private Vector3 _accumulatedForces;
-    [SerializeField] private Vector2 startVelocity;
-    [SerializeField] private float airFriction = 0.1f;
-    [SerializeField] private float groundFriction = 0.2f;
+    [SerializeField] private Vector3 startVelocity;
+    [SerializeField] private float airFriction;
+    [SerializeField] private float groundFriction;
     [SerializeField] private float mass;
     
     private float massInverse;
@@ -34,25 +34,23 @@ public class VerletIntegration : MonoBehaviour
 
     void Start()
     {
-        massInverse = 1 / mass;
+        //massInverse = 1 / mass;
         CurrentPosition = transform.position;
-        SetPreviousPosition(new Vector3(startVelocity.x, startVelocity.y));
+        SetPreviousPosition(startVelocity);
     }
 
     void FixedUpdate()
     {
-        AddForce(new Vector3(0.0f, -9.81f, 0.0f) * mass); // Add gravity force
-
         float dampening = transform.position.y <= 0.0f ? groundFriction : airFriction;
         
         Vector3 tempPos = CurrentPosition;
         CurrentPosition = (2 - dampening) * CurrentPosition - (1 - dampening) * PreviousPosition +
                            _accumulatedForces * (Time.fixedDeltaTime * Time.fixedDeltaTime * massInverse);
         PreviousPosition = tempPos;
-        CurrentPosition = CurrentPosition.y <= 0.0f ? new Vector3(CurrentPosition.x, 0.0f) : CurrentPosition;
+        //CurrentPosition = CurrentPosition.y <= 0.0f ? new Vector3(CurrentPosition.x, 0.0f) : CurrentPosition; //Simple ground collision
         transform.position = CurrentPosition;
         _accumulatedForces = Vector3.zero;
-
+        
     }
 
     public void AddForce(Vector3 force)
@@ -93,5 +91,11 @@ public class VerletIntegration : MonoBehaviour
     public void SetYVelocity(InputField inputField)
     {
         posUpdateVelocity.y = float.Parse(inputField.text);
+    }
+
+    public void SetMass(float m)
+    {
+        mass = m;
+        massInverse = 1 / mass;
     }
 }
