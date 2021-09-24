@@ -17,18 +17,24 @@ public class Orbit : MonoBehaviour
     [SerializeField] private float maxDistance;
     [SerializeField] private float minDistance;
 
+    [SerializeField] private bool gravity = true;
+    [SerializeField] private bool isMoon = true;
 
     void Start()
     {
-        verletIntegration.SetMass(MoonMass);
+        verletIntegration.SetMass(isMoon ? MoonMass : EarthMass);
+
         minDistance = Vector3.Distance(Earth.position, Moon.position);
         maxDistance = minDistance;
-        print(CalculateGravitationalForce());
     }
 
     void FixedUpdate()
     {
-        Vector3 diffEarthMoon = Earth.transform.position - Moon.transform.position;
+        if(!gravity)
+            return;
+            
+        Vector3 diffEarthMoon = isMoon ? Earth.transform.position - Moon.transform.position : Moon.transform.position - Earth.transform.position;
+        
         Vector3 earthDir = Vector3.Normalize(diffEarthMoon);
         float gravitationalForce = CalculateGravitationalForce();
 
@@ -41,6 +47,10 @@ public class Orbit : MonoBehaviour
     {
         float dist = Vector3.Distance(Earth.position, Moon.position);
         return G * EarthMass * MoonMass / Mathf.Pow(dist, 2);
+    }
+
+    public void ToggleGravity(){
+        gravity = !gravity;
     }
 
     private void MinMaxDistance()
