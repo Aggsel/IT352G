@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d75fed37-4664-458c-a653-a9fdc15d9c3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.IT352G/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.IT352G/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CollisionListMaker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CollisionListMaker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GravityProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GravityProvider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/2D Gravity.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2D Gravity.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spring.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spring.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VerletGravity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VerletGravity.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Verletintegration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Verletintegration.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/collision.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/collision.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/floor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/floor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.IT352G/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IT352G/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/VerletIntegration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/VerletIntegration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6AF207EC-D210-4462-8913-F7CC589986AE/89/26b6a268/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/SetBallPosition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8d3a4cbacdae45b384e0e80b376938e13600/e0/e47ef34b/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -64,10 +50,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15232">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15112">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15232" />
+      <option name="pid" value="15112" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -88,12 +74,14 @@
       <workItem from="1631102045381" duration="4778000" />
       <workItem from="1631300689042" duration="793000" />
       <workItem from="1631535468856" duration="3837000" />
+      <workItem from="1631726928739" duration="8184000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.Tabs.Properties">
